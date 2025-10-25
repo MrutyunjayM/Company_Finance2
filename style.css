@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f0f4f8;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: linear-gradient(135deg, #004e92, #000428);
+  color: white;
+  text-align: center;
+  padding: 20px 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+main {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 0 15px;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  background: #fff;
+  padding: 10px 15px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.controls select, input {
+  padding: 10px;
+  border: 1px solid #bbb;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+button {
+  background: #004e92;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+button:hover { background: #002c5c; }
+
+.card {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th, td {
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+  padding: 10px;
+}
+
+tr:hover { background: #f9fafb; }
+
+footer {
+  background: #000428;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  margin-top: 30px;
+}
+
+.summary-box {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 15px;
+}
+.summary-box p {
+  background: #f8f9fa;
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-weight: 600;
+}
