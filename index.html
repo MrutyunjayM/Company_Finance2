@@ -12,25 +12,36 @@
   </header>
 
   <main>
+    <!-- Company Income -->
     <section class="card income-section">
       <h2>Company Monthly Income</h2>
       <input type="number" id="income" placeholder="Enter monthly income ₹" />
     </section>
 
+    <!-- Employee Section -->
     <section class="card salary-section">
       <h2>Employee Salaries</h2>
+
+      <!-- Inline form to add employee -->
+      <div class="add-employee-form">
+        <input type="text" id="empName" placeholder="Employee Name">
+        <input type="number" id="empSalary" placeholder="Salary (₹)">
+        <button id="addEmployeeBtn">Add Employee</button>
+      </div>
+
       <table id="salaryTable">
         <thead>
           <tr>
-            <th>Employee Name</th>
+            <th>Name</th>
             <th>Salary (₹)</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody id="tableBody"></tbody>
       </table>
-      <button id="addEmployee">➕ Add Employee</button>
     </section>
 
+    <!-- Summary Section -->
     <section class="card summary">
       <h2>Summary</h2>
       <p>Total Employees: <span id="totalEmployees">0</span></p>

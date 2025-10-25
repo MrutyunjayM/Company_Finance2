@@ -1,18 +1,24 @@
-// Array to store employees
 let employees = [];
 
-// Add employee button
-document.getElementById("addEmployee").addEventListener("click", () => {
-  const name = prompt("Enter employee name:");
-  const salary = parseFloat(prompt("Enter salary (₹):")) || 0;
+// Add employee
+document.getElementById("addEmployeeBtn").addEventListener("click", () => {
+  const name = document.getElementById("empName").value.trim();
+  const salary = parseFloat(document.getElementById("empSalary").value);
 
-  if (name && salary > 0) {
-    employees.push({ name, salary });
-    updateTable();
+  if (!name || isNaN(salary) || salary <= 0) {
+    alert("Enter a valid name and salary!");
+    return;
   }
+
+  employees.push({ name, salary });
+  updateTable();
+
+  // Clear inputs
+  document.getElementById("empName").value = "";
+  document.getElementById("empSalary").value = "";
 });
 
-// Update the salary table
+// Update table
 function updateTable() {
   const tbody = document.getElementById("tableBody");
   tbody.innerHTML = "";
@@ -22,6 +28,7 @@ function updateTable() {
       <tr>
         <td>${emp.name}</td>
         <td>₹${emp.salary.toLocaleString()}</td>
+        <td><button onclick="deleteEmployee(${index})">🗑️</button></td>
       </tr>`;
     tbody.innerHTML += row;
   });
@@ -29,7 +36,13 @@ function updateTable() {
   updateSummary();
 }
 
-// Calculate and update summary section
+// Delete employee
+function deleteEmployee(index) {
+  employees.splice(index, 1);
+  updateTable();
+}
+
+// Update summary
 function updateSummary() {
   const totalSalary = employees.reduce((sum, emp) => sum + emp.salary, 0);
   const income = parseFloat(document.getElementById("income").value) || 0;
@@ -40,5 +53,5 @@ function updateSummary() {
   document.getElementById("balance").textContent = balance.toLocaleString();
 }
 
-// Update summary whenever income changes
+// Update summary when income changes
 document.getElementById("income").addEventListener("input", updateSummary);
