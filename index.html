@@ -5,51 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Company Finance Dashboard</title>
   <link rel="stylesheet" href="style.css" />
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
   <header>
-    <h1>🏢 Company Finance Dashboard</h1>
+    <h1>💼 Company Finance Dashboard</h1>
   </header>
 
   <main>
-    <section class="controls">
-      <label for="monthSelect">Select Month:</label>
-      <select id="monthSelect"></select>
-      <button id="newMonthBtn">➕ New Month</button>
-    </section>
-
-    <section class="card income">
-      <h2>💰 Company Income</h2>
+    <section class="card income-section">
+      <h2>Company Monthly Income</h2>
       <input type="number" id="income" placeholder="Enter monthly income ₹" />
     </section>
 
-    <section class="card salary">
-      <div class="header-row">
-        <h2>👥 Employee Salaries</h2>
-        <button id="addEmployee">Add Employee</button>
-      </div>
+    <section class="card salary-section">
+      <h2>Employee Salaries</h2>
       <table id="salaryTable">
         <thead>
           <tr>
-            <th>Name</th>
+            <th>Employee Name</th>
             <th>Salary (₹)</th>
-            <th>Action</th>
           </tr>
         </thead>
         <tbody id="tableBody"></tbody>
       </table>
+      <button id="addEmployee">➕ Add Employee</button>
     </section>
 
     <section class="card summary">
-      <h2>📊 Summary</h2>
-      <div class="summary-box">
-        <p>Total Employees: <span id="totalEmployees">0</span></p>
-        <p>Total Salary: ₹<span id="totalSalary">0</span></p>
-        <p>Balance: ₹<span id="balance">0</span></p>
-      </div>
-      <canvas id="financeChart"></canvas>
-      <button id="saveMonth">💾 Save Month Data</button>
+      <h2>Summary</h2>
+      <p>Total Employees: <span id="totalEmployees">0</span></p>
+      <p>Total Salary Paid: ₹<span id="totalSalary">0</span></p>
+      <p>Remaining Balance: ₹<span id="balance">0</span></p>
     </section>
   </main>
 
